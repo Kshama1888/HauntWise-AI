@@ -1,0 +1,224 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #100d20;
+  color: #f8f4ff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.topbar, footer {
+  padding: 20px 6%;
+  border-bottom: 1px solid #393151;
+}
+
+.brand {
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.brand-icon, .brand-ai { color: #ffb66e; }
+
+.theme-label, .eyebrow { color: #ffb66e; letter-spacing: 2px; }
+
+.topbar { display: flex; justify-content: space-between; }
+
+main { width: min(1150px, 92%); margin: auto; }
+
+.hero { text-align: center; padding: 55px 0 35px; }
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; }
+
+h1 span { color: #ffb66e; }
+
+.hero-text { max-width: 650px; margin: auto; color: #c3bad7; }
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.panel, .feature {
+  background: #1c1831;
+  border: 1px solid #393151;
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.section-heading { display: flex; gap: 14px; margin-bottom: 25px; }
+
+.step-number { color: #ffb66e; font-weight: 800; }
+
+.section-heading p, .empty-state p { color: #c3bad7; }
+
+.upload-area {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 20px;
+  border: 2px dashed #76658f;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.upload-area:hover { border-color: #ffb66e; }
+
+.upload-icon { font-size: 2.5rem; color: #bba2ff; }
+
+.upload-area span { color: #c3bad7; }
+
+input[type="file"] { display: block; margin-top: 12px; max-width: 100%; }
+
+.preview-container img {
+  display: block;
+  max-width: 100%;
+  max-height: 280px;
+  margin: 15px auto;
+  border-radius: 12px;
+}
+
+label[for="preferences"] { display: block; margin: 20px 0 8px; }
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #393151;
+  border-radius: 10px;
+  background: #100d20;
+  color: white;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+}
+
+.primary-button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 18px;
+  background: #ffb66e;
+  color: #20112c;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.primary-button:disabled { opacity: .6; cursor: wait; }
+
+.privacy-note { color: #c3bad7; font-size: .8rem; text-align: center; }
+
+.results-panel { min-height: 420px; }
+
+.empty-state, .loading-state { text-align: center; padding: 60px 10px; }
+
+.moon { color: #ffb66e; font-size: 4rem; }
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  margin: auto;
+  border: 4px solid #393151;
+  border-top-color: #ffb66e;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.result-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+.error-message {
+  padding: 14px;
+  border-radius: 10px;
+  background: #702f3b;
+  color: white;
+  overflow-wrap: anywhere;
+}
+
+[hidden] { display: none !important; }
+
+.how-it-works { text-align: center; padding: 55px 0; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  text-align: left;
+}
+
+.feature span { color: #ffb66e; }
+
+.feature p, footer { color: #c3bad7; }
+
+@media (max-width: 760px) {
+  .workspace, .feature-grid { grid-template-columns: 1fr; }
+  .topbar { gap: 10px; }
+  .theme-label { font-size: .65rem; }
+}
+
+footer { text-align: center; margin-top: 20px; }
+
+
+/* Trick-or-Treat Safety Planner */
+
+.safety-planner {
+  margin-top: 28px;
+}
+
+.safety-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.safety-form-grid label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+.safety-form-grid select,
+.safety-form-grid input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #393151;
+  border-radius: 10px;
+  background: #100d20;
+  color: #f8f4ff;
+  font: inherit;
+}
+
+.safety-form-grid select:focus,
+.safety-form-grid input:focus {
+  outline: 2px solid #ffb66e;
+  outline-offset: 2px;
+}
+
+.safety-result {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #393151;
+  border-radius: 14px;
+  background: #100d20;
+}
+
+.safety-result h3 {
+  color: #ffb66e;
+}
+
+@media (max-width: 600px) {
+  .safety-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
